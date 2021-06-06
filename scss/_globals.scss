@@ -1,0 +1,266 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+button,
+span,
+a,
+label {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+input,
+button {
+    outline: none;
+}
+
+input {
+    background: transparent;
+    border: 1px solid #7d7d7d;
+    border-radius: 6px;
+    font-size: 12px;
+    color: rgba(#000, 0.7);
+    padding: 15px 12px;
+    height: 46px;
+    outline: none;
+    &:focus {
+        border: 1px solid $red;
+    }
+}
+
+button {
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+p {
+    line-height: 1.4;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1270px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.btn {
+    display: inline-block;
+    border: 1px solid $red;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: $red;
+    border-radius: 50px;
+    box-shadow: 0px 2px 6px 0px rgba(108, 0, 12, 0.3);
+    outline: none;
+    span {
+        position: relative;
+        margin-right: 16px;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -16px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 7px solid #fff;
+            transition: all 0.15s ease-in-out;
+        }
+    }
+    &:hover {
+        background: transparent;
+        color: $red;
+        span::after {
+            border-left: 7px solid $red;
+        }
+    }
+    &:focus {
+        transform: scale(.95);
+    }
+}
+
+.btn--op {
+    background: transparent;
+    color: $red;
+    span::after {
+        border-left: 7px solid $red;
+    }
+    &:hover {
+        background: $red;
+        color: #fff;
+        span::after {
+            border-left: 7px solid #fff;
+        }
+    }
+}
+
+.title {
+    color: $blue;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background: $red;
+    }
+}
+
+.tingle-modal {
+    background: rgba(0, 0, 0, 0.3);
+}
+.tingle-modal:before {
+    backdrop-filter: blur(1px);
+}
+
+
+
+.submit-modal .tingle-modal-box, .callback-form .tingle-modal-box {
+    max-width: 290px;
+}
+.video-form .tingle-modal-box {
+    max-width: 610px;
+}
+.tingle-modal-box__content {
+    padding: 30px 15px;
+}
+
+.modal__title {
+    text-align: center;
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    &::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.submit-modal {
+    .tingle-modal-box__content {
+        padding: 30px 15px;
+    }
+    .modal__subtitle {
+        display: block;
+        text-align: center;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 290px;
+    margin: 0 auto;
+}
+
+.modal-form__form-subtitle {
+    text-align: center;
+    b {
+        display: block;
+        color: $blue;
+    }
+    margin-bottom: 30px;
+}
+
+.modal-form__form-input {
+    margin-bottom: 20px;
+}
+
+.modal-callback, .modal-video {
+    display: none;
+}
+
+.video {
+    position: relative;
+    max-width: 580px;
+    width: 100%;
+}
+
+.video__media {
+    width: 580px;
+    height: 320px;
+    width: 100%;
+}
+
+.video__button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    outline: none;
+    img {
+        transition: all 0.2s ease-in-out;
+    }
+    &:hover {
+        img {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.header--fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background: #fff;
+    animation: scroll .5s ease-in-out;
+    box-shadow: 0 0 6px 1px rgba(#000, 0.35);
+    .header__top {
+        display: none;
+    }
+    .header__main {
+        padding: 5px 0;
+    }
+    .menu__list a {
+        padding: 10px;
+    }
+}
+
+.page--scroll {
+    margin-top: 186px;
+}

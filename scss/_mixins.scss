@@ -1,0 +1,11 @@
+@mixin bg-style {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin ul-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
